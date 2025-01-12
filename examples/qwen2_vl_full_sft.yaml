@@ -1,0 +1,68 @@
+### model
+model_name_or_path: Qwen/Qwen2-VL-7B-Instruct
+
+### method
+stage: sft
+do_train: true
+finetuning_type: freeze
+freeze_trainable_layers: 25
+freeze_trainable_modules: all
+
+### dataset
+dataset: mire_train
+eval_dataset: mire_val
+template: qwen2_vl
+cutoff_len: 3200
+max_samples: 10000
+overwrite_cache: true
+preprocessing_num_workers: 16
+image_dir:
+  - /content/train_resize_intend_616/images/
+  - /content/train/images/
+max_pixel: 900000
+max_image_length: 3
+# image_resolution: 1024
+
+### augmentation
+# grayscale
+grayscale_prob: 0.0
+# blur
+blur_prob: 0.0
+max_blur_radius: 3
+# brightness
+brightness_prob: 0.0
+brightness_delta: 0.0
+# jpeg 
+do_jpeg_compression: false
+max_quality: 100
+min_quality: 100
+# random resize
+random_resize_min_pixel: 800000
+random_resize_max_pixel: 1000000
+
+
+### output
+output_dir: saves/qwen2_vl-7b/full/freeze_25_b12_900k
+logging_steps: 1
+save_steps: 0.5
+plot_loss: true
+overwrite_output_dir: true
+
+### train
+per_device_train_batch_size: 1 
+gradient_accumulation_steps: 6 
+learning_rate: 5.0e-6
+num_train_epochs: 3.0
+lr_scheduler_type: cosine
+warmup_ratio: 0.05
+fp16: true
+ddp_timeout: 180000000
+max_grad_norm: 10
+
+### eval
+per_device_eval_batch_size: 4
+eval_strategy: steps
+eval_steps: 5
+
+flash_attn: fa2
+deepspeed: examples/deepspeed/ds_z3_offload_config.json

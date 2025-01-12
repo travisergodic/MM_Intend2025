@@ -1,0 +1,42 @@
+### model
+model_name_or_path: saves/qwen2_vl-7b/full/freeze_25_b12_900k/checkpoint-225
+
+### method
+stage: sft
+do_train: false
+do_predict: true
+predict_with_generate: true
+
+finetuning_type: freeze
+freeze_trainable_layers: 25
+freeze_trainable_modules: all
+
+### dataset
+eval_dataset: mire_test
+template: qwen2_vl
+cutoff_len: 7000
+max_samples: 10000
+overwrite_cache: true
+preprocessing_num_workers: 8
+image_dir: 
+  - tianchi_data/test1/intend_images_616/
+  - tianchi_data/test1/images/
+max_pixel: 900000
+max_image_length: 5
+# image_resolution: 1024
+
+
+### output
+output_dir: saves/qwen2_vl-7b/full/freeze_25_b12_900k-infer-225_max5 #修改为保存地址
+logging_steps: 1
+overwrite_output_dir: true
+
+
+### eval
+per_device_eval_batch_size: 1
+
+### generation
+max_new_tokens: 100
+temperature: 0.1
+top_k: 1
+# use_cache: false

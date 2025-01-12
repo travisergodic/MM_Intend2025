@@ -1,0 +1,1 @@
+FORCE_TORCHRUN=1 WANDB_DISABLED=true llamafactory-cli train examples/qwen2_vl_full_sft.yaml

@@ -1,0 +1,106 @@
+{
+    "mire_train": {
+        "file_name": "mire/final/train.json",
+        "columns": {
+            "images": "image",
+            "prompt": "instruction",
+            "query": "input",
+            "response": "output"
+        }
+    },
+    "mire_train_aug": {
+        "file_name": "mire/final/train_aug.json",
+        "columns": {
+            "images": "image",
+            "prompt": "instruction",
+            "query": "input",
+            "response": "output"
+        }
+    },    
+    "mire_val": {
+        "file_name": "mire/final/val.json",
+        "columns": {
+            "images": "image",
+            "prompt": "instruction",
+            "query": "input",
+            "response": "output"
+        }
+    },
+    "mire_test": {
+        "file_name": "mire/final/test1.json",
+        "columns": {
+            "images": "image",
+            "prompt": "instruction",
+            "query": "input"
+        }
+    },
+    "mire_train_sharegpt_intend_reason": {
+        "file_name": "mire/final/train_sharegpt_intend_reason.json",
+        "formatting": "sharegpt",
+        "columns": {
+            "messages": "conversations",
+            "images": "image"
+        }
+    },
+    "mire_train_sharegpt_scene_reason": {
+        "file_name": "mire/final/train_sharegpt_scene_reason.json",
+        "formatting": "sharegpt",
+        "columns": {
+            "messages": "conversations",
+            "images": "image"
+        }
+    },
+    "mire_val_sharegpt": {
+        "file_name": "mire/final/val_sharegpt.json",
+        "formatting": "sharegpt",
+        "columns": {
+            "messages": "conversations",
+            "images": "image"
+        }
+    },
+    "mire_train_sharegpt_system": {
+        "file_name": "mire/final/train_sharegpt_system.json",
+        "formatting": "sharegpt",
+        "columns": {
+            "messages": "conversations",
+            "images": "image",
+            "system": "system"
+        }
+    },
+    "mire_val_sharegpt_system": {
+        "file_name": "mire/final/val_sharegpt_system.json",
+        "formatting": "sharegpt",
+        "columns": {
+            "messages": "conversations",
+            "images": "image",
+            "system": "system"
+        }
+    },
+    "mire_test_system": {
+        "file_name": "mire/final/test1_system.json",
+        "columns": {
+            "images": "image",
+            "prompt": "instruction",
+            "query": "input",
+            "system": "system"
+        }
+    },
+    "mire_train_intend": {
+        "file_name": "mire/final/train_intend.json",
+        "columns": {
+            "images": "image",
+            "prompt": "instruction",
+            "query": "input",
+            "response": "output"
+        }
+    },
+    "mire_crop_scene": {
+        "file_name": "/content/crop_scene/train_intend.json",
+        "columns": {
+            "images": "image",
+            "prompt": "instruction",
+            "query": "input",
+            "response": "output"
+        }
+    }
+}

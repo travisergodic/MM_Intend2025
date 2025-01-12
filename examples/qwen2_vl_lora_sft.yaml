@@ -1,0 +1,46 @@
+### model
+model_name_or_path: Qwen/Qwen2-VL-7B-Instruct
+
+### method
+stage: sft
+do_train: true
+finetuning_type: lora
+
+### dataset
+dataset: mire_train
+eval_dataset: mire_val
+template: qwen2_vl
+cutoff_len: 2560 # 2048
+max_samples: 10000
+overwrite_cache: true
+preprocessing_num_workers: 16
+image_dir: /content/train/images/
+max_pixel: 541696
+max_image_length: 4
+# image_resolution: 1024
+
+### output
+output_dir: saves/qwen2_vl-7b/lora/sft-1024
+logging_steps: 1
+save_steps: 0.2
+plot_loss: true
+overwrite_output_dir: true
+
+### train
+per_device_train_batch_size: 4
+gradient_accumulation_steps: 2
+learning_rate: 5.0e-6
+num_train_epochs: 3.0
+lr_scheduler_type: cosine
+warmup_ratio: 0.05
+fp16: true
+ddp_timeout: 180000000
+
+### eval
+# val_size: 0.1
+per_device_eval_batch_size: 8
+eval_strategy: steps
+eval_steps: 5
+
+flash_attn: fa2
+deepspeed: examples/deepspeed/ds_z3_offload_config.json

@@ -1,0 +1,1 @@
+WANDB_DISABLED=true llamafactory-cli train examples/predict_full.yaml
