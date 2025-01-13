@@ -4,6 +4,7 @@
 1. **团队名称**：baseline
 2. **团队成员**：胡太维、朱成斌
 3. **初赛排名**：82 / 1643
+4. **最终成绩**：84.94 (基准分数：78.82)
 
 ## 环境
 1. **Python 版本**: 3.10.12
@@ -126,8 +127,7 @@
    wget -O part_ab https://travisergodic-ai-models.oss-cn-shanghai.aliyuncs.com/mm_intend/part_ab
    wget -O part_ac https://travisergodic-ai-models.oss-cn-shanghai.aliyuncs.com/mm_intend/part_ac
    wget -O part_ad https://travisergodic-ai-models.oss-cn-shanghai.aliyuncs.com/mm_intend/part_ad
-   cat
-    part_aa part_ab part_ac part_ad > checkpoint-225_partial.tar.gz
+   cat part_aa part_ab part_ac part_ad > checkpoint-225_partial.tar.gz
    tar -xzvf checkpoint-225_partial.tar.gz -C .
    ```
 4. **模型推理**：请先将 `examples/predict_full_final.yaml` 的变数 `model_name_or_path` 改为 `checkpoint-225_partial/`
